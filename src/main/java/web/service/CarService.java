@@ -14,6 +14,12 @@ public class CarService {
     private CarDao carDao;
 
     public List<Car> getCars(Integer count) {
-        return carDao.getCars(count);
+        if (count == null) {
+            return carDao.getCars();
+        } else {
+            return carDao.getCars().stream()
+                    .limit(count)
+                    .toList();
+        }
     }
 }

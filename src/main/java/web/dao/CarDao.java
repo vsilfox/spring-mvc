@@ -19,13 +19,8 @@ public class CarDao {
         cars.add(new Car("Ford Kuga 1.5 Tdci", 112233445566L, 1499));
     }
 
-    public List<Car> getCars(Integer count) {
-        if (count == null) {
-            return cars;
-        } else {
-            return cars.stream()
-                    .limit(count)
-                    .toList();
-        }
+    public List<Car> getCars() {
+        return cars;
     }
 }
+
